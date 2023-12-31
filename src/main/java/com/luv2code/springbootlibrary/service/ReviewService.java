@@ -22,6 +22,7 @@ public class ReviewService {
     }
 
     public void postReview(String userEmail, ReviewRequest reviewRequest) throws Exception {
+
         // find out if user already wrote review for this book ID
             Review validateReview = reviewRepository.findByUserEmailAndBookId(userEmail, reviewRequest.getBookId());
             if (validateReview != null) {
@@ -45,6 +46,7 @@ public class ReviewService {
     }
 
     public Boolean userReviewListed(String userEmail, Long bookId) {
+        System.out.println(bookId);
         Review validateReview = reviewRepository.findByUserEmailAndBookId(userEmail, bookId);
                 if (validateReview != null) {
                     return true;

@@ -36,6 +36,7 @@ public class ReviewController {
         if (userEmail == null) {
             throw new Exception("User email is missing");
         }
+        // submit user review
         reviewService.postReview(userEmail, reviewRequest);
     }
 
